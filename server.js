@@ -17,14 +17,7 @@ var head=req.headers;
     url:     'http://146.59.49.67',
     body:   req.body,
     json: true
-  }, function(error, response, body){
-      console.log("ffff")
-      console.log(body)
-      res.set(response.headers);
-      console.log(response.statusCode)
-      res.statusCode = response.statusCode;
-      res.send(body);
-  });
+  }).pipe(res)
 
 
 });
