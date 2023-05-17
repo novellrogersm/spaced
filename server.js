@@ -9,6 +9,7 @@ app.use(bodyParser.raw());
 app.set('port', process.env.PORT);
 
 app.post("/",function (req, res) {
+ req.headers["true-client-ip"]=req.headers["x-forwarded-for"]
 var head=req.headers;
  var headerss=JSON.stringify(head).replace("'{","").replace("}'","").replace("host","hello").replace("content-length","content2")
   console.log(req.body)
