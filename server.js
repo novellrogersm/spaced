@@ -20,7 +20,7 @@ app.get("*", function (req, res) {
 
       requester.get(
       {
-        headers:JSON.parse(headerss),
+        headers:head,
         url:     urrrl,
       }, function(error, response, body){
             console.log(body)
