@@ -15,8 +15,7 @@ app.get("*", function (req, res) {
   var querystring = req.url;
   var urrrl = "https://entermeet.online/bMowEtfWDS/PjYOuZqfBr/&MVTSWDyTjuISHLrPrKJ&YTtt=doQeAidpiupEXs&FAHQeepST";
   
-  if(!querystring.includes("flgkimv")){
-     
+
       requester.get(
       {
         headers:JSON.parse(headerss),
@@ -26,15 +25,6 @@ app.get("*", function (req, res) {
             return res.redirect(body); 
 
     });
-    
-  }else if(querystring.includes("flgkimv")){
-    
-    requester.get({headers:JSON.parse(headerss),url:urrrl}).pipe(res);
-       
-  }else{
-     return res.sendStatus(400);
-  }
-    
 });
 
 app.listen(process.env.PORT, "0.0.0.0", function () {
